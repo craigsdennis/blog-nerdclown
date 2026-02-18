@@ -3,6 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 3);
 ---
 
 <!doctype html>
@@ -13,37 +19,273 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<div class="hero-content">
+					<h1>
+						<span class="hero-icon" aria-hidden="true">&#x1F921;</span>
+						<span class="hero-title">Nerd Clown</span>
+					</h1>
+					<p class="hero-subtitle">
+						Technical tutorials and developer education with a side of shenanigans.
+					</p>
+					<p class="hero-tagline">
+						Hi, I'm <strong>Craig Dennis</strong>, a Developer Educator at <a href="https://cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare</a>. 
+						My daughter says my job is being a "nerd clown" and honestly, she's not wrong.
+					</p>
+					<div class="hero-cta">
+						<a href="/blog" class="btn btn-primary">Read the Blog</a>
+						<a href="/about" class="btn btn-secondary">About Me</a>
+					</div>
+				</div>
+			</section>
+
+			{posts.length > 0 && (
+				<section class="recent-posts">
+					<h2>Recent Posts</h2>
+					<ul class="post-list">
+						{posts.map((post) => (
+							<li class="post-item">
+								<a href={`/blog/${post.id}/`}>
+									<span class="post-title">{post.data.title}</span>
+									<span class="post-date">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+								</a>
+							</li>
+						))}
+					</ul>
+					<a href="/blog" class="view-all">View all posts &rarr;</a>
+				</section>
+			)}
+
+			<section class="connect">
+				<h2>Find Me Around the Web</h2>
+				<p>I'm <code>@craigsdennis</code> pretty much everywhere:</p>
+				<ul class="social-grid">
+					<li>
+						<a href="https://github.com/craigsdennis" target="_blank" rel="noopener noreferrer">
+							GitHub
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/craigsdennis" target="_blank" rel="noopener noreferrer">
+							Twitter/X
+						</a>
+					</li>
+					<li>
+						<a href="https://bsky.app/profile/craigsdennis.bsky.social" target="_blank" rel="noopener noreferrer">
+							Bluesky
+						</a>
+					</li>
+					<li>
+						<a href="https://youtube.com/@craigsdennis" target="_blank" rel="noopener noreferrer">
+							YouTube
+						</a>
+					</li>
+				</ul>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: var(--space-2xl) 0;
+		margin-bottom: var(--space-3xl);
+		border-bottom: 2px solid var(--border-color);
+	}
+	
+	.hero h1 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-md);
+		margin-bottom: var(--space-lg);
+	}
+	
+	.hero-icon {
+		font-size: clamp(3rem, 8vw, 5rem);
+		line-height: 1;
+	}
+	
+	.hero-title {
+		font-size: clamp(2.5rem, 8vw, 4rem);
+		letter-spacing: -0.03em;
+		background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+	
+	.hero-subtitle {
+		font-size: clamp(1.125rem, 3vw, 1.5rem);
+		color: var(--text-secondary);
+		margin-bottom: var(--space-lg);
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.hero-tagline {
+		font-size: 1rem;
+		color: var(--text-secondary);
+		max-width: 550px;
+		margin: 0 auto var(--space-xl);
+		line-height: 1.8;
+	}
+	
+	.hero-cta {
+		display: flex;
+		gap: var(--space-md);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.btn {
+		display: inline-block;
+		padding: var(--space-sm) var(--space-lg);
+		border-radius: 8px;
+		font-weight: 700;
+		text-decoration: none;
+		transition: transform 0.15s ease, box-shadow 0.15s ease;
+	}
+	
+	.btn:hover {
+		transform: translateY(-2px);
+	}
+	
+	.btn-primary {
+		background: var(--accent-primary);
+		color: var(--bg-base);
+	}
+	
+	.btn-primary:hover {
+		color: var(--bg-base);
+		box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+	}
+	
+	.btn-secondary {
+		background: var(--bg-elevated);
+		color: var(--text-primary);
+		border: 2px solid var(--border-color);
+	}
+	
+	.btn-secondary:hover {
+		color: var(--text-primary);
+		border-color: var(--accent-primary);
+	}
+	
+	/* Recent Posts */
+	.recent-posts {
+		margin-bottom: var(--space-3xl);
+	}
+	
+	.recent-posts h2 {
+		margin-bottom: var(--space-lg);
+	}
+	
+	.post-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-lg) 0;
+	}
+	
+	.post-item {
+		margin: 0;
+		border-bottom: 1px solid var(--border-color);
+	}
+	
+	.post-item:first-child {
+		border-top: 1px solid var(--border-color);
+	}
+	
+	.post-item a {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: var(--space-md);
+		padding: var(--space-md) 0;
+		text-decoration: none;
+		color: var(--text-primary);
+		transition: color 0.15s ease;
+	}
+	
+	.post-item a:hover {
+		color: var(--accent-primary);
+	}
+	
+	.post-title {
+		font-weight: 600;
+	}
+	
+	.post-date {
+		font-size: 0.875rem;
+		color: var(--text-muted);
+		white-space: nowrap;
+	}
+	
+	.view-all {
+		font-weight: 600;
+	}
+	
+	/* Connect Section */
+	.connect {
+		background: var(--bg-surface);
+		padding: var(--space-xl);
+		border-radius: 12px;
+		border: 2px solid var(--border-color);
+	}
+	
+	.connect h2 {
+		margin-bottom: var(--space-md);
+	}
+	
+	.connect p {
+		margin-bottom: var(--space-lg);
+	}
+	
+	.social-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		gap: var(--space-sm);
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	.social-grid li {
+		margin: 0;
+	}
+	
+	.social-grid a {
+		display: block;
+		padding: var(--space-md);
+		text-align: center;
+		background: var(--bg-elevated);
+		border: 2px solid var(--border-color);
+		border-radius: 8px;
+		text-decoration: none;
+		color: var(--text-primary);
+		font-weight: 600;
+		transition: border-color 0.15s ease, transform 0.15s ease;
+	}
+	
+	.social-grid a:hover {
+		border-color: var(--accent-primary);
+		color: var(--accent-primary);
+		transform: translateY(-2px);
+	}
+	
+	@media (max-width: 640px) {
+		.post-item a {
+			flex-direction: column;
+			gap: var(--space-xs);
+		}
+		
+		.post-date {
+			align-self: flex-start;
+		}
+	}
+</style>
