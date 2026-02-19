@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
 			<section class="hero">
 				<div class="hero-content">
 					<h1>
-						<span class="hero-icon" aria-hidden="true">&#x1F921;</span>
+						<img src="/favicon.svg" alt="" class="hero-icon" aria-hidden="true" />
 						<span class="hero-title">Nerd Clown</span>
 					</h1>
 					<p class="hero-subtitle">
@@ -106,8 +106,8 @@ const posts = (await getCollection('blog')).sort(
 	}
 	
 	.hero-icon {
-		font-size: clamp(3rem, 8vw, 5rem);
-		line-height: 1;
+		width: clamp(4rem, 12vw, 6rem);
+		height: clamp(4rem, 12vw, 6rem);
 	}
 	
 	.hero-title {

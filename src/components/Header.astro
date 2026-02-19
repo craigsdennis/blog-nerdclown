@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink.astro';
 <header>
 	<nav>
 		<a href="/" class="logo">
-			<span class="logo-icon" aria-hidden="true">&#x1F921;</span>
+			<img src="/favicon.svg" alt="" class="logo-icon" aria-hidden="true" />
 			<span class="logo-text">{SITE_TITLE}</span>
 		</a>
 		<div class="nav-links">
@@ -80,8 +80,8 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	
 	.logo-icon {
-		font-size: 1.5rem;
-		line-height: 1;
+		width: 32px;
+		height: 32px;
 	}
 	
 	.logo-text {
