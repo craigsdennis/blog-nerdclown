@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
+import { Image } from 'astro:assets';
+import craigAvatar from '../assets/craig-avatar.png';
 ---
 
 <!doctype html>
@@ -15,6 +17,9 @@ import { SITE_TITLE } from '../consts';
 		<main>
 			<article class="about">
 				<header class="about-header">
+					<div class="about-avatar">
+						<Image src={craigAvatar} alt="Craig Dennis" width={200} height={200} />
+					</div>
 					<h1>About Me</h1>
 					<p class="subtitle">Developer Educator, Professional Nerd Clown</p>
 				</header>
@@ -44,6 +49,23 @@ import { SITE_TITLE } from '../consts';
 						meet people where they are. Technical education doesn't have to be dry or intimidating.
 					</p>
 
+					<h2>AI Avenue</h2>
+					<p>
+						I'm the host of <a href="https://aiavenue.show" target="_blank" rel="noopener noreferrer">AI Avenue</a>, 
+						a show that explores the good, bad, and ethically-messy of AI. Think Bill Nye meets an AI dad meets 
+						a dev tutorial. Each episode explores a human sense or ability — voice, vision, thinking, learning, 
+						doing, smell — and how AI is learning to replicate it.
+					</p>
+					<p>
+						I'm joined by Yorick, a robotic hand with a chip on his servo. We meet real researchers, test wild tech, 
+						and break things down for real people. Guests have included folks from Anthropic, IBM, ElevenLabs, 
+						Electronic Arts, and more.
+					</p>
+					<p>
+						Each episode comes with tutorials and apps you can build yourself. 
+						<a href="https://www.youtube.com/playlist?list=PLI6HzeeCy4S-XL166XESd9eAV87beBiWH" target="_blank" rel="noopener noreferrer">Watch the full season on YouTube</a>.
+					</p>
+
 					<h2>Find Me Online</h2>
 					<p>
 						I'm <code>@craigsdennis</code> on most platforms. Feel free to reach out, ask questions, 
@@ -52,7 +74,7 @@ import { SITE_TITLE } from '../consts';
 					<ul class="social-list">
 						<li><a href="https://github.com/craigsdennis" target="_blank" rel="noopener noreferrer">GitHub</a> - Code, projects, and contributions</li>
 						<li><a href="https://twitter.com/craigsdennis" target="_blank" rel="noopener noreferrer">Twitter/X</a> - Quick thoughts and tech takes</li>
-						<li><a href="https://bsky.app/profile/craigsdennis.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a> - More quick thoughts</li>
+						<li><a href="https://bsky.app/profile/craigsdennis.dev" target="_blank" rel="noopener noreferrer">Bluesky</a> - More quick thoughts</li>
 						<li><a href="https://youtube.com/@craigsdennis" target="_blank" rel="noopener noreferrer">YouTube</a> - Video tutorials and walkthroughs</li>
 					</ul>
 
@@ -85,6 +107,16 @@ import { SITE_TITLE } from '../consts';
 		margin-bottom: var(--space-2xl);
 		padding-bottom: var(--space-xl);
 		border-bottom: 2px solid var(--border-color);
+	}
+
+	.about-avatar {
+		margin-bottom: var(--space-lg);
+	}
+
+	.about-avatar img {
+		border-radius: 50%;
+		border: 3px solid var(--accent-primary);
+		box-shadow: 0 0 0 4px var(--bg-surface), 0 4px 24px rgba(255, 107, 53, 0.2);
 	}
 
 	.about-header h1 {
