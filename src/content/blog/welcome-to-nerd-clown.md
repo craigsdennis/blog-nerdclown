@@ -7,6 +7,8 @@ heroImage: ../../assets/welcome-hero.webp
 
 Yooooo! So here we are. Another tech blog on the Internet. But this one has a story.
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/_KmtIwpHE7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## How "Nerd Clown" Became a Thing
 
 A few weeks ago, someone asked my daughter what her dad does for work. Without hesitation, she said: "He's a nerd clown."
