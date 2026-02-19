@@ -1,10 +1,10 @@
 ---
 title: 'Welcome to Nerd Clown'
-description: 'The origin story of this blog name and what to expect from this corner of the internet.'
+description: 'The origin story of this blog name and what to expect from this corner of the Internet.'
 pubDate: 'Feb 18 2026'
 ---
 
-Yooooo! So here we are. Another tech blog on the internet. But this one has a story.
+Yooooo! So here we are. Another tech blog on the Internet. But this one has a story.
 
 ## How "Nerd Clown" Became a Thing
 
