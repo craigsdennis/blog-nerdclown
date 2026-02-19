@@ -5,94 +5,82 @@ pubDate: 'Feb 18 2026'
 heroImage: ../../assets/replicate-skills-hero.webp
 ---
 
-I've been obsessed with how AI coding assistants are evolving. We went from autocomplete to agents that can reason about codebases and execute multi-step tasks. But there's been a gap: these assistants are great at writing code, but what about *running* AI models?
+Y'all. AI coding assistants have gotten bonkers. We went from autocomplete to full-on agents that can reason about your codebase and execute multi-step tasks. What's wild is they're great at writing code, but what about *running* AI models?
 
-Enter **Replicate Skills** — a way to give your AI assistant the ability to discover, compare, and run AI models right from your coding environment.
+Like, what if you could just say "hey, generate me a header image" and it just... does it?
 
-## What Are Agent Skills?
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We just released Agent Skills for Replicate 🎁<br><br>This teaches AI coding agents like Claude Code and Cursor how to use Replicate&#39;s API.<br><br>You can now ask your agent to find the right model, generate images, and more—all from within your code editor.<a href="https://t.co/abc123">https://t.co/abc123</a></p>&mdash; Replicate (@replicate) <a href="https://twitter.com/replicate/status/2024173881406476310">February 16, 2026</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Before diving into Replicate specifically, let's talk about the underlying concept. [Agent Skills](https://agentskills.io) is an emerging standard for extending AI coding assistants with domain-specific capabilities. Think of skills as plugins that inject specialized knowledge and workflows into your assistant's context.
+Enter **Replicate Skills**.
 
-The beauty of skills is that they work across multiple tools. The same skill works with Claude Code, OpenCode, OpenAI Codex, and other agents that support the standard. Install once, use everywhere.
+## What Even Are Agent Skills?
+
+Okay so [Agent Skills](https://agentskills.io) is this emerging standard for extending AI coding assistants with domain-specific knowledge. Think of skills as plugins that inject specialized workflows into your assistant's brain.
+
+The cool part? They work across multiple tools. Same skill works with Claude Code, OpenCode, Cursor, whatever. Install once, use everywhere. I love when things just work like that.
 
 ## The Replicate Skill
 
-Replicate maintains an [official skills repository](https://github.com/replicate/skills) that teaches your AI assistant how to:
+Replicate put together an [official skills repo](https://github.com/replicate/skills) that teaches your AI assistant how to:
 
-- **Search and discover models** using Replicate's API
-- **Compare models** to find the best fit for your use case
-- **Understand model schemas** so it generates correct API calls
-- **Run predictions** and handle the async nature of AI inference
-- **Manage outputs** including file URLs and webhooks
+- **Search and discover models** — there are more than 70k+ on Replicate
+- **Compare models** — find the right one for your use case  
+- **Understand model schemas** — so it generates correct API calls
+- **Run predictions** — handle the async stuff properly
+- **Manage outputs** — deal with file URLs, webhooks, all that
 
-The skill encodes best practices like preferring official models (they're always running and have stable APIs) and handling the prediction lifecycle correctly.
+It encodes best practices too, like preferring official models (they're always running and have stable APIs). Your assistant just... knows things now.
 
-## Installation
+## Getting Started
 
-Getting started takes one command:
+One command:
 
 ```bash
 npx skills add replicate/skills
 ```
 
-This installs the skill into your project. You'll also need a Replicate API token — grab one from [replicate.com/account/api-tokens](https://replicate.com/account/api-tokens) and set it as `REPLICATE_API_TOKEN` in your environment.
+Boom. Skill installed. 
 
-## How It Works in Practice
+You'll need a Replicate API token — grab one from [replicate.com/account/api-tokens](https://replicate.com/account/api-tokens) and set it as `REPLICATE_API_TOKEN` in your environment.
 
-Here's where it gets interesting. Once the skill is installed, you can have conversations like:
+## Okay But What Does This Actually Look Like?
+
+Here's where it gets fun. Once the skill is installed, you can literally just ask:
 
 > "Generate a header image for my blog post about developer tools"
 
-Your AI assistant now knows how to:
+And your AI assistant figures out how to:
 
 1. Search Replicate for image generation models
-2. Choose an appropriate model (like flux-schnell for speed)
+2. Pick a good one (like flux-schnell for speed)
 3. Fetch the model's input schema
-4. Create a prediction with a well-crafted prompt
-5. Poll for completion
-6. Return the generated image URL
+4. Craft a prompt
+5. Create the prediction
+6. Poll for completion
+7. Return the image URL
 
-The skill provides the knowledge; your assistant does the reasoning and execution.
+The skill provides the knowledge. Your assistant does the reasoning. You just vibe.
 
-## Why This Matters
+## Why I'm Hyped About This
 
-This is a glimpse of where AI-assisted development is heading. Instead of switching contexts to use different tools, you stay in your flow. Need an image? Ask. Need to process audio? Ask. Need to run a custom ML model? Just ask.
+This is where AI-assisted development is heading. Instead of context-switching between a million tools, you stay in your flow. Need an image? Ask. Need to transcribe audio? Ask. Need to run some custom ML model? Just ask.
 
-The skill pattern means this knowledge is:
+And the skill pattern means this knowledge is:
 
-- **Shareable** — install it in any project
-- **Updatable** — the maintainer can improve it
-- **Composable** — combine multiple skills for complex workflows
+- **Shareable** — install it anywhere
+- **Updatable** — maintainers can improve it
+- **Composable** — stack multiple skills for complex workflows
 
-## Building Your Own
+## The Meta Part
 
-The skills standard is open. If you have domain expertise, you can create skills for:
-
-- Specific APIs or services you work with
-- Internal tools and workflows
-- Industry-specific knowledge
-
-Check out the [Agent Skills specification](https://agentskills.io/specification) if you want to contribute to this ecosystem.
-
-## Try It
-
-If you're using an AI coding assistant that supports skills, give Replicate Skills a try:
-
-```bash
-npx skills add replicate/skills
-```
-
-Then ask your assistant to generate something. The first time feels a bit magical — you're writing code and creating AI-generated assets in the same conversation.
-
-The meta part? I used this exact skill to generate all the images for this site. Let me show you the prompts and what they created.
+So here's the thing. I used this exact skill to generate all the images on this site. Every single one. Let me show you the receipts.
 
 ## The Images on This Site
 
-Every image on this blog was generated using [flux-schnell](https://replicate.com/black-forest-labs/flux-schnell) via the Replicate skill. It's one of the fastest image generation models available — most images generate in under a second. Here are the actual prompts:
+Every image was generated using [flux-schnell](https://replicate.com/black-forest-labs/flux-schnell) via the Replicate skill. It's stupid fast — most images generate in under a second. Here are the actual prompts:
 
 ### Header Image (This Post)
-
-The image at the top of this post was generated with:
 
 ```
 Abstract digital art composition blending elegant code typography 
@@ -119,7 +107,7 @@ developer humor vibe, professional illustration style
 
 ### Social Share Image
 
-The OG image that shows when you share links to this site:
+The OG image that shows up when you share links:
 
 ```
 Bold social media banner for tech blog called NERD CLOWN, featuring 
@@ -131,18 +119,20 @@ around, playful but professional developer aesthetic, visible
 outlines, vibrant colors on dark, perfect for Open Graph social sharing
 ```
 
-Notice how the prompts include the site's exact color palette (#ff6b35 orange, #00d4aa teal, #0d0d0d dark background) to keep everything cohesive. That's the kind of context the frontend-design skill provides — it analyzed the site's aesthetic and informed how to craft prompts that match.
+Notice how the prompts include the site's exact color palette? That's because I also used a frontend-design skill that analyzed the site's aesthetic. Skills talking to skills. We're living in the future.
 
 ## Try These Models Yourself
 
-Want to experiment with the same models? Here are direct links:
+Want to play around? Here are the links:
 
-- **[flux-schnell](https://replicate.com/black-forest-labs/flux-schnell)** — The fastest FLUX model, great for quick iterations and prototyping. This is what I used for all the images above.
-- **[flux-dev](https://replicate.com/black-forest-labs/flux-dev)** — Higher quality but slower. Good for final production images.
-- **[flux-pro](https://replicate.com/black-forest-labs/flux-pro)** — The premium option with the best quality.
+- **[flux-schnell](https://replicate.com/black-forest-labs/flux-schnell)** — The fast one. Great for iterating. This is what I used.
+- **[flux-dev](https://replicate.com/black-forest-labs/flux-dev)** — Higher quality, bit slower.
+- **[flux-pro](https://replicate.com/black-forest-labs/flux-pro)** — The premium option.
 
-You can try any of these directly on Replicate's website, or use the skill to generate images right from your coding environment.
+You can try any of these directly on Replicate's website, or use the skill to generate images right from your editor.
 
-Full circle indeed.
+Full circle. Skills are cool. Go make something.
+
+I didn't even make a Skillz to pay the Billz joke. Skill issue.
 
 *Craig*
