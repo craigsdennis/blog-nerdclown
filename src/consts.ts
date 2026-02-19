@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Nerd Clown';
-export const SITE_DESCRIPTION = 'Technical tutorials and developer education with a side of shenanigans. By Craig Dennis, Developer Educator at Cloudflare.';
+export const SITE_DESCRIPTION = 'Nerd Out and Clown Around. Technical tutorials and developer education by Craig Dennis, Developer Educator at Cloudflare.';
