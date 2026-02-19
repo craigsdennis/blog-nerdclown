@@ -14,7 +14,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image } = Astro.props;
-const ogImageUrl = image ? new URL(image.src, Astro.url) : null;
+const ogImageUrl = image ? new URL(image.src, Astro.url) : new URL('/favicon.svg', Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -48,11 +48,11 @@ const ogImageUrl = image ? new URL(image.src, Astro.url) : null;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+<meta property="og:image" content={ogImageUrl} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content={ogImageUrl ? "summary_large_image" : "summary"} />
+<meta property="twitter:card" content={image ? "summary_large_image" : "summary"} />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-{ogImageUrl && <meta property="twitter:image" content={ogImageUrl} />}
+<meta property="twitter:image" content={ogImageUrl} />
