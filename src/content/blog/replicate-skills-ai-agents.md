@@ -2,7 +2,7 @@
 title: 'Give Your AI Coding Assistant Superpowers with Replicate Skills'
 description: 'Discover how Agent Skills let you seamlessly integrate AI model generation into your coding workflow with Replicate.'
 pubDate: 'Feb 18 2026'
-heroImage: ../../assets/replicate-skills-hero.webp
+heroImage: ../../assets/replicate-skills-hero.png
 ---
 
 Y'all. AI coding assistants have gotten bonkers. We went from autocomplete to full-on agents that can reason about your codebase and execute multi-step tasks. What's wild is they're great at writing code, but what about *running* AI models?
@@ -78,18 +78,24 @@ So here's the thing. I used this exact skill to generate all the images on this 
 
 ## The Images on This Site
 
-Every image was generated using [flux-schnell](https://replicate.com/black-forest-labs/flux-schnell) via the Replicate skill. It's stupid fast — most images generate in under a second. Here are the actual prompts:
+Most images were generated using [flux-schnell](https://replicate.com/black-forest-labs/flux-schnell) via the Replicate skill. It's stupid fast — most images generate in under a second. But the header? That's the new hotness.
 
 ### Header Image (This Post)
 
+This one was generated with [nano-banana-pro](https://replicate.com/google/nano-banana-pro) — Google's state of the art image generation model. I asked for buff emoji giving each other a dap and honestly it delivered:
+
 ```
-Abstract digital art composition blending elegant code typography 
-and neural network visualizations, floating terminal windows with 
-glowing syntax-highlighted code fragments merging into flowing 
-artistic brushstrokes, dark background with cyan, magenta and gold 
-accents, creative AI assistant concept, professional tech blog 
-header, cinematic lighting, 4k quality
+Two muscular emoji characters giving each other a cool dap 
+handshake fist bump greeting, one is the nerd emoji 🤓 with 
+thick glasses, the other is a clown emoji 🤡 with red nose 
+and colorful hair, both have extremely buff bodybuilder 
+physiques with huge arms, their hands meeting in the middle 
+in a bro handshake, black and white illustration style but 
+keeping the classic emoji aesthetic, brotherhood moment, 
+clean graphic style, white background
 ```
+
+That's the nerd clown energy right there. 🤝
 
 ### Welcome Post Hero
 
@@ -125,7 +131,8 @@ Notice how the prompts include the site's exact color palette? That's because I 
 
 Want to play around? Here are the links:
 
-- **[flux-schnell](https://replicate.com/black-forest-labs/flux-schnell)** — The fast one. Great for iterating. This is what I used.
+- **[nano-banana-pro](https://replicate.com/google/nano-banana-pro)** — Google's latest. Used it for the header. It's bananas. 🍌
+- **[flux-schnell](https://replicate.com/black-forest-labs/flux-schnell)** — The fast one. Great for iterating.
 - **[flux-dev](https://replicate.com/black-forest-labs/flux-dev)** — Higher quality, bit slower.
 - **[flux-pro](https://replicate.com/black-forest-labs/flux-pro)** — The premium option.
 
