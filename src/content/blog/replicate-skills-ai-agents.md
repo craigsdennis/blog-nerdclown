@@ -60,7 +60,7 @@ And your AI assistant figures out how to:
 6. Poll for completion
 7. Return the image URL
 
-The skill provides the knowledge. Your assistant does the reasoning. You just vibe.
+The skill provides the knowledge. Your assistant does the reasoning. You just guide.
 
 ## Why I'm Hyped About This
 
