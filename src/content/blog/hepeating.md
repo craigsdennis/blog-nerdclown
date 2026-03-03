@@ -85,4 +85,4 @@ Now if you'll excuse me, I need to go thank my wife. For the blog name and for t
 
 *Craig*
 
-**P.S.** This post was brainstormed and researched with [Claude](https://claude.ai) via [OpenCode](https://opencode.ai) as a creative partner. The images were generated with [Replicate](https://replicate.com). Not me trying to not hepeat the AI. More on using AI as a writing collaborator in a future post.
+**P.S.** This post was brainstormed and researched with [Claude](https://claude.ai) via [OpenCode](https://opencode.ai) as a creative partner. The images were generated with [Replicate](https://replicate.com). Not me trying to not hepeat the AI. More on using AI as a writing collaborator in a future post. Don't throw up in your mouth. It will be tasteful. I `Promise().resolve()`
